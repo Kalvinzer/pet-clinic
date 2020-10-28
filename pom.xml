@@ -46,6 +46,7 @@
     </build>
 
     <scm>
+        <url>https://github.com/Kalvinzer/pet-clinic</url>
         <developerConnection>scm:git:https://github.com/Kalvinzer/pet-clinic.git</developerConnection>
       <tag>pet-clinic-0.0.1</tag>
   </scm>
