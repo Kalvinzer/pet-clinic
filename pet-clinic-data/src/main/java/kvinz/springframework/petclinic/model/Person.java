@@ -3,7 +3,7 @@ package kvinz.springframework.petclinic.model;
 public class Person extends BaseEntity{
 
     private String firstName;
-    private String lastNamel;
+    private String lastName;
 
     public String getFirstName() {
         return firstName;
@@ -13,11 +13,11 @@ public class Person extends BaseEntity{
         this.firstName = firstName;
     }
 
-    public String getLastNamel() {
-        return lastNamel;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastNamel(String lastNamel) {
-        this.lastNamel = lastNamel;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }
