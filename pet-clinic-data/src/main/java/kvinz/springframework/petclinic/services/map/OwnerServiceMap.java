@@ -1,11 +1,16 @@
 package kvinz.springframework.petclinic.services.map;
 
 import kvinz.springframework.petclinic.model.Owner;
-import kvinz.springframework.petclinic.services.CrudService;
+import kvinz.springframework.petclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements CrudService<Owner,Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner,Long> implements OwnerService {
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
+    }
 
     @Override
     public Set<Owner> findAll() {
