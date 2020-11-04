@@ -1,31 +1,31 @@
 package kvinz.springframework.petclinic.services.map;
 
-import kvinz.springframework.petclinic.model.Pet;
-import kvinz.springframework.petclinic.services.PetService;
+import kvinz.springframework.petclinic.model.Specialty;
+import kvinz.springframework.petclinic.services.SpecialtyService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
-public class PetServiceMap  extends AbstractServiceMap<Pet,Long> implements PetService {
+public class SpecialtyServiceMap extends AbstractServiceMap<Specialty, Long> implements SpecialtyService {
 
     @Override
-    public Set<Pet> findAll() {
+    public Set<Specialty> findAll() {
         return super.findAll();
     }
 
     @Override
-    public Pet findById(Long id) {
+    public Specialty findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Pet save(Pet object) {
+    public Specialty save(Specialty object) {
         return super.save(object);
     }
 
     @Override
-    public void delete(Pet object) {
+    public void delete(Specialty object) {
         super.delete(object);
     }
 
