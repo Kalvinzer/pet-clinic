@@ -2,9 +2,11 @@ package kvinz.springframework.petclinic.services.map;
 
 import kvinz.springframework.petclinic.model.Visit;
 import kvinz.springframework.petclinic.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VisitMapService extends AbstractServiceMap<Visit,Long> implements VisitService {
 
     @Override

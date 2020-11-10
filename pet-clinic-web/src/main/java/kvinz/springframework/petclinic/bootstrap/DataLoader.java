@@ -1,10 +1,7 @@
 package kvinz.springframework.petclinic.bootstrap;
 
 import kvinz.springframework.petclinic.model.*;
-import kvinz.springframework.petclinic.services.OwnerService;
-import kvinz.springframework.petclinic.services.PetTypeService;
-import kvinz.springframework.petclinic.services.SpecialtyService;
-import kvinz.springframework.petclinic.services.VetService;
+import kvinz.springframework.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,15 @@ public class DataLoader implements CommandLineRunner {
     private final VetService  vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
+                      SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
 
@@ -78,14 +78,23 @@ public class DataLoader implements CommandLineRunner {
         owner2.setAddress("Pepega str 1");
         owner2.setCity("Kiev");
         owner2.setTelephone("123442123");
-        ownerService.save(owner2);
+
 
         Pet mariannaPet = new Pet();
-        ivanPet.setPetType(saveCatPetType);
-        ivanPet.setOwner(owner2);
-        ivanPet.setBirthDate(LocalDate.now());
-        ivanPet.setName("Jpega");
-        owner2.getPets().add(ivanPet);
+        mariannaPet.setPetType(saveCatPetType);
+        mariannaPet.setOwner(owner2);
+        mariannaPet.setBirthDate(LocalDate.now());
+        mariannaPet.setName("Jpega");
+        owner2.getPets().add(mariannaPet);
+
+        ownerService.save(owner2);
+
+        Visit visit = new Visit();
+        visit.setPet(mariannaPet);
+        visit.setDate(LocalDate.now());
+        visit.setDescription("Dead");
+
+        visitService.save(visit);
 
         System.out.println("-------Loaded owners");
 
